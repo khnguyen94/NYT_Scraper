@@ -7,23 +7,23 @@ const mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 // Create the noteSchema with the Schema object
-var noteSchema = new Schema({
+var commentSchema = new Schema({
   // _headlineId: is the article associate with the note
   _headlineId: {
     type: Schema.Types.ObjectId,
-    ref: "Headline",
+    ref: "Comment",
   },
   // date: a string
   date: {
     type: Date,
     default: Date.now,
   },
-  // noteText: a string
-  noteText: String,
+  // commentText: a string
+  commentText: String,
 });
 
-// Create the Note model using the noteSchema
-var Note = mongoose.model("Note", noteSchema);
+// Create the Comment model using the commentSchema
+var Comment = mongoose.model("Comment", commentSchema);
 
-// Export the Note model
-module.exports = Note;
+// Export the Comment model
+module.exports = Comment;
