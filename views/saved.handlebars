@@ -1,0 +1,51 @@
+<div class="jumbotron text-center">
+    <h1 class="display-4">New York Times Web Scraper</h1>
+    <p class="lead">These are your saved New York Times articles.</p>
+
+    <hr class="my-4">
+
+    <!-- Container for Saved Articles Display -->
+    <div class="container">
+
+        <ul>
+            {{#each article}}
+            <!-- For each saved article, display a card with: link to the article as the card headline, button to delete from saved articles, button to view the comments associated with the article -->
+            <div class="card">
+                <div class="card-body">
+                    <a href="#" class="card-link">Article Headline Here</a>
+                    <a href="#" class="btn btn-primary">View Comments</a>
+                    <a href="#" class="btn btn-primary">Delete Article</a>
+                </div>
+            </div>
+            {{/each}}
+
+            {{#unless articles.length}}
+            <!-- If there are no saved articles, then display a card that prompts the user to browse for some articles-->
+            <div class="alert alert-warning text-center">
+                <h4>You don't have any saved articles.</h4>
+            </div>
+            <div class="card">
+                <div class="card-header text-center">
+                    <h3>Browse for some interesting articles and save them!</h3>
+                </div>
+                <div class="card-body text-center">
+                    <h4>
+                        <a href="/">Browse Now</a>
+                    </h4>
+                </div>
+            </div>
+            {{/unless}}
+        </ul>
+
+
+
+    </div>
+</div>
+
+<!-- Import all necessary CDNs -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+
+<!-- Import Custome JS Script -->
+<script src="/assets/javascript/index.js"></script>

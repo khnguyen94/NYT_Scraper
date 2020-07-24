@@ -1,0 +1,44 @@
+<div class="jumbotron text-center">
+    <h1 class="display-4">New York Times Web Scraper</h1>
+    <p class="lead">Scrape some new articles from The New York Times website!</p>
+
+    <hr class="my-4">
+
+    <!-- Container for Articles Display -->
+    <div class="container">
+
+        <ul>
+            {{#each article}}
+
+            {{#unless articles.length}}
+            <div class='alert alert-warning text-center'>
+                <h4>You dont currently have any new articles!</h4>
+            </div>
+            <div class="card">
+                <div class="card-header text-center">
+                    <h3>Action Menu</h3>
+                </div>
+                <div class="card-body text-center">
+                    <h4>
+                        <a class="scrape-new">Scrape New Articles</a>
+                    </h4>
+                    <h4>
+                        <a href="/saved">Your Saved Articles</a>
+                    </h4>
+                </div>
+            </div>
+            {{/unless}}
+
+            {{/each}}
+        </ul>
+
+    </div>
+</div>
+
+<!-- Import all necessary CDNs -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+
+<!-- Import Custome JS Script -->
+<script src="/assets/javascript/index.js"></script>
